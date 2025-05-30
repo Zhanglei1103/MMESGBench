@@ -542,10 +542,10 @@
     {
         "doc_id": "Microsoft CDP Climate Change Response 2023.pdf",
         "doc_type": "CDP Climate Responses",
-        "question": "Based on the total Scope 1 and 2 emissions in the 2020 base year, what is the average annual reduction required to reach the 2030 target? Please write the answer in int format.",
-        "answer": "146777",
+        "question": "Based on the total Scope 1 and 2 emissions in the 2020 base year, what is the average annual reduction required to reach the 2030 target?",
+        "answer": "14677.7",
         "evidence_sources": "['Pure-text (Plain-text)', 'Generalized-text (Layout)']",
-        "answer_format": "Int",
+        "answer_format": "Float",
         "evidence_pages": "[25, 30]"
     },
     {
