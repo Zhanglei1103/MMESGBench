@@ -108,71 +108,7 @@ MMESGBench is constructed via a **multi-stage human-AI collaborative pipeline** 
 
 > *Figure: The collaborative QA generation pipeline.*
 
-### ✏️ Prompt & QA Generation Details
 
-To ensure high-quality question-answer pairs grounded in real-world ESG documents, we design a task-specific **prompt template** that guides multimodal LLM to generate reasoning-based, diverse, and multimodal QA pairs. The prompt enforces domain fidelity, encourages multi-hop inference, and ensures a controlled rate of unanswerable cases.
-
-![Prompt Template for QA Generation](./assets/qa_prompt_template.png)
-
-> *Figure: ESG-specific prompt for QA pair generation.*
-
----
-
-### 🔄 Cross-Page QA Generation Framework
-
-For complex cross-page reasoning, we apply a **semantic clustering pipeline** to group related pages before prompting the model. A page encoder generates 128-dimensional embeddings, which are indexed using FAISS. Similarity-based grouping enables the model to reason across semantically connected but physically distant pages.
-
-![Cross-page QA Framework](./assets/cross_page_generation.png)
-
-> *Figure: Detailed cross-page QA generation pipeline.*
-
-
-### 🧪 QA Examples with Visual & Cross-Page Reasoning
-
-MMESGBench includes challenging examples that require **multi-modal, cross-page, and numerical reasoning** over real-world ESG documents. Below are selected examples that showcase key capabilities tested by the benchmark.
-
----
-
-#### 📊 Visual-based Numerical Reasoning
-
-This example requires aggregating numerical evidence scattered across a **complex infographic**, combining layout and image features to compute a global population estimate.
-
-![Visual Numerical Reasoning](./assets/qa_visual_population.png)
-
-> *Figure A3: Visual-based reasoning over charts and layout-aware image elements.*
-
----
-
-#### 📈 Multi-page Tabular Score Reasoning
-
-This question requires **multi-step score aggregation** across multiple pages, where tables encode logic for score assignment and minimum-score selection logic must be applied.
-
-![Tabular Score Reasoning](./assets/qa_tabular_score.png)
-
-> *Figure A4: Table-based and cross-page QA requiring structured logic.*
-
----
-
-#### 🧮 Cross-page Numerical Comparison & Arithmetic
-
-A complex case involving **arithmetic calculation across time-series emissions data**, split across multiple pages and document sections.
-
-![Arithmetic Emission Comparison](./assets/qa_emission_comparison.png)
-
-> *Figure A5: Arithmetic and comparison reasoning from scoped ESG targets.*
-
-
-### 📊 Benchmark Results
-
-We evaluate a wide range of **text-only**, **multimodal**, and **retrieval-augmented** models on MMESGBench. Performance is reported across:
-
-- **Evidence Modalities**: Text (TXT), Layout (LAY), Chart (CHA), Table (TAB), Image (IMG)
-- **Evidence Location Types**: Single-page (SIN), Multi-page (MUL), Unanswerable (UNA)
-- **Overall Performance**: Accuracy (ACC) and F1 score
-
-![Main Results on MMESGBench](./assets/main_results_table.png)
-
-> *Table 1: Evaluation of various models on MMESGBench. Best results in bold, second best underlined.*
 
 
 
